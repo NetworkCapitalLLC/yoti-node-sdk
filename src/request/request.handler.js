@@ -1,6 +1,5 @@
 'use strict';
 
-const superagent = require('superagent');
 const { YotiResponse } = require('./response');
 const yotiCommon = require('../yoti_common');
 
@@ -13,50 +12,65 @@ const yotiCommon = require('../yoti_common');
  *
  * @returns {Promise} Resolves {YotiResponse}
  */
-module.exports.execute = (yotiRequest, buffer = false) => new Promise((resolve, reject) => {
-  const request = superagent(yotiRequest.getMethod(), yotiRequest.getUrl());
+module.exports.execute = async (yotiRequest, buffer = false) => {
+  const url = yotiRequest.getUrl();
+  const method = yotiRequest.getMethod();
+  const headers = yotiRequest.getHeaders() || {};
 
-  const requestCanSendPayload = yotiCommon.requestCanSendPayload(yotiRequest.getMethod());
+  const requestCanSendPayload = yotiCommon.requestCanSendPayload(method);
   const payload = yotiRequest.getPayload();
+  let body = null;
 
   if (requestCanSendPayload && payload) {
-    const payloadData = payload.getPayloadData();
-    request.send(payloadData);
+    body = payload.getPayloadData();
   }
 
-  if (buffer === true) {
-    request.buffer(buffer);
-  }
+  try {
+    const fetchOptions = {
+      method,
+      headers,
+    };
 
-  if (yotiRequest.getHeaders()) {
-    request.set(yotiRequest.getHeaders());
-  }
+    if (body) {
+      fetchOptions.body = body;
+    }
 
-  request
-    .then((response) => {
-      let parsedResponse = null;
-      let body = null;
-      let receipt = null;
+    const response = await fetch(url, fetchOptions);
+    
+    let parsedResponse = null;
+    let responseBody = null;
+    let receipt = null;
 
-      if (response.body instanceof Buffer) {
-        body = response.body;
-        parsedResponse = response.body;
-      } else if (response.text) {
-        body = response.text;
-        parsedResponse = response.headers['content-type'] ? response.body : JSON.parse(response.text);
-        receipt = parsedResponse.receipt || null;
-      }
+    const contentType = response.headers.get('content-type') || '';
+    
+    if (buffer || contentType.includes('application/octet-stream')) {
+      const arrayBuffer = await response.arrayBuffer();
+      responseBody = Buffer.from(arrayBuffer);
+      parsedResponse = responseBody;
+    } else if (contentType.includes('application/json')) {
+      const text = await response.text();
+      responseBody = text;
+      parsedResponse = JSON.parse(text);
+      receipt = parsedResponse.receipt || null;
+    } else {
+      responseBody = await response.text();
+      parsedResponse = responseBody;
+    }
 
-      return resolve(new YotiResponse(
-        parsedResponse,
-        response.statusCode,
-        receipt,
-        body,
-        response.headers
-      ));
-    })
-    .catch((err) => {
-      console.log(`Error getting data from Yoti API: ${err.message}`);
-      return reject(err);
+    const responseHeaders = {};
+    response.headers.forEach((value, key) => {
+      responseHeaders[key] = value;
     });
-});
+
+    return new YotiResponse(
+      parsedResponse,
+      response.status,
+      receipt,
+      responseBody,
+      responseHeaders
+    );
+  } catch (err) {
+    console.log(`Error getting data from Yoti API: ${err.message}`);
+    throw err;
+  }
+};
