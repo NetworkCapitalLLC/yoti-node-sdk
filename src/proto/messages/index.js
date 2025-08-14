@@ -1,11 +1,11 @@
-const attributeList = require('./proto.attribute.list');
-const multiValue = require('./proto.multi.value');
-const encryptedData = require('./proto.common.encrypted-data');
-const extraData = require('./proto.share.extra-data');
-const thirdPartyAttribute = require('./proto.share.third-party-attribute');
-const signedTimestamp = require('./proto.signed.timestamp');
+import attributeList from './proto.attribute.list.js';
+import multiValue from './proto.multi.value.js';
+import encryptedData from './proto.common.encrypted-data.js';
+import extraData from './proto.share.extra-data.js';
+import thirdPartyAttribute from './proto.share.third-party-attribute.js';
+import signedTimestamp from './proto.signed.timestamp.js';
 
-module.exports = {
+export default {
   ...attributeList,
   ...multiValue,
   ...encryptedData,

@@ -1,12 +1,10 @@
-'use strict';
-
-const constants = require('../yoti_common/constants');
+import constants from '../yoti_common/constants.js';
 
 function hasProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-module.exports.AmlResult = class AmlResult {
+export class AmlResult {
   /**
    * Check if all expected attributes are included in the result.
    *
@@ -52,4 +50,4 @@ module.exports.AmlResult = class AmlResult {
     }
     return Error.message;
   }
-};
+}

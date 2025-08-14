@@ -2,6 +2,7 @@
   "name": "yoti",
   "version": "4.12.1",
   "description": "Yoti NodeJS SDK for back-end integration",
+  "type": "module",
   "author": "Yoti LTD <tech@yoti.com> (https://www.yoti.com/developers)",
   "license": "MIT",
   "repository": {

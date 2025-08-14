@@ -1,6 +1,4 @@
-'use strict';
-
-const MediaResponse = require('./media.response');
+import MediaResponse from './media.response.js';
 
 class FaceMapResponse {
   constructor(facemap) {
@@ -18,4 +16,4 @@ class FaceMapResponse {
   }
 }
 
-module.exports = FaceMapResponse;
+export default FaceMapResponse;

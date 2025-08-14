@@ -1,8 +1,6 @@
-'use strict';
-
-const { Profile } = require('./profile');
-const { ApplicationProfile } = require('./application.profile');
-const ExtraData = require('./extra.data');
+import { Profile } from './profile.js';
+import { ApplicationProfile } from './application.profile.js';
+import ExtraData from './extra.data.js';
 
 /**
  * @typedef {Object} RequirementsNotMetDetail
@@ -186,6 +184,4 @@ class ActivityDetails {
   }
 }
 
-module.exports = {
-  ActivityDetails,
-};
+export { ActivityDetails };

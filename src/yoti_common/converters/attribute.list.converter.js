@@ -1,9 +1,7 @@
-'use strict';
+import { AttributeConverter } from './attribute.converter.js';
+import { AnchorProcessor } from '../anchor.processor.js';
 
-const { AttributeConverter } = require('./attribute.converter');
-const AnchorProcessor = require('../anchor.processor').AnchorProcessor;
-
-module.exports.AttributeListConverter = class AttributeListConverter {
+export class AttributeListConverter {
   static convertAttributeList(attributes = []) {
     const convertedAttributes = [];
 
@@ -37,4 +35,4 @@ module.exports.AttributeListConverter = class AttributeListConverter {
 
     return convertedAttributes;
   }
-};
+}

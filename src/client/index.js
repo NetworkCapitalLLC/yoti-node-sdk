@@ -1,10 +1,8 @@
-'use strict';
+import YotiClient from './yoti.client.js';
+import IDVClient from './idv.client.js';
+import DigitalIdentityClient from './digital.identity.client.js';
 
-const YotiClient = require('./yoti.client');
-const IDVClient = require('./idv.client');
-const DigitalIdentityClient = require('./digital.identity.client');
-
-module.exports = {
+export {
   YotiClient,
   IDVClient,
   DigitalIdentityClient,

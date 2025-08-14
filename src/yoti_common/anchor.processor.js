@@ -1,11 +1,9 @@
-'use strict';
+import forge from 'node-forge';
 
-const forge = require('node-forge');
-
-const { messages } = require('../proto');
-const { YotiAnchor } = require('../data_type/anchor');
-const { YotiSignedTimeStamp } = require('../data_type/signed.timestamp');
-const { YotiDate } = require('../data_type/date');
+import { messages } from '../proto/index.js';
+import { YotiAnchor } from '../data_type/anchor.js';
+import { YotiSignedTimeStamp } from '../data_type/signed.timestamp.js';
+import { YotiDate } from '../data_type/date.js';
 
 /**
  * @typedef {object} Certificate - defined in forge, see X.509v3 RSA certificate (mocked here)
@@ -381,6 +379,4 @@ class AnchorProcessor {
   }
 }
 
-module.exports = {
-  AnchorProcessor,
-};
+export { AnchorProcessor };

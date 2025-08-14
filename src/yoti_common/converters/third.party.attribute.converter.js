@@ -1,9 +1,7 @@
-'use strict';
-
-const { messages } = require('../../proto');
-const { YotiDate } = require('../../data_type/date');
-const AttributeIssuanceDetails = require('../../data_type/attribute.issuance.details');
-const AttributeDefinition = require('../../data_type/attribute.definition');
+import { messages } from '../../proto/index.js';
+import { YotiDate } from '../../data_type/date.js';
+import AttributeIssuanceDetails from '../../data_type/attribute.issuance.details.js';
+import AttributeDefinition from '../../data_type/attribute.definition.js';
 
 class ThirdPartyAttributeConverter {
   static convertThirdPartyAttribute(protoBytes) {
@@ -40,4 +38,4 @@ class ThirdPartyAttributeConverter {
   }
 }
 
-module.exports = ThirdPartyAttributeConverter;
+export default ThirdPartyAttributeConverter;

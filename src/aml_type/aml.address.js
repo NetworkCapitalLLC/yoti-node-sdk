@@ -1,9 +1,7 @@
-'use strict';
+import constants from '../yoti_common/constants.js';
+import { Validation } from '../yoti_common/validation.js';
 
-const constants = require('../yoti_common/constants');
-const Validation = require('../yoti_common/validation');
-
-module.exports.AmlAddress = class AmlAddress {
+export class AmlAddress {
   constructor(countryCode, postcode) {
     this.setCountryCode(countryCode);
     if (typeof postcode !== 'undefined') {
@@ -67,4 +65,4 @@ module.exports.AmlAddress = class AmlAddress {
   toString() {
     return JSON.stringify(this.getData());
   }
-};
+}

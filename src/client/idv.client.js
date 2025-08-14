@@ -1,7 +1,5 @@
-'use strict';
-
-const config = require('../../config');
-const { IDVService } = require('../idv_service');
+import * as config from '../../config/index.js';
+import { IDVService } from '../idv_service/index.js';
 
 /**
  * Client used for communication with the Yoti IDV service
@@ -179,4 +177,4 @@ class IDVClient {
   }
 }
 
-module.exports = IDVClient;
+export default IDVClient;

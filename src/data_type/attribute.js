@@ -1,7 +1,5 @@
-'use strict';
-
 /**
- * @typedef {import("./anchor").YotiAnchor} YotiAnchor
+ * @typedef {import("./anchor.js").YotiAnchor} YotiAnchor
  */
 
 /**
@@ -96,6 +94,4 @@ class Attribute {
   }
 }
 
-module.exports = {
-  Attribute,
-};
+export { Attribute };

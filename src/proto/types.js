@@ -1,4 +1,4 @@
-const root = require('./root');
+import root from './root.js';
 
 const ATTRIBUTE_PUB = 'attrpubapi_v1';
 const COMMON_PUB = 'compubapi_v1';
@@ -34,4 +34,4 @@ Object.entries(types).forEach(([typeName, typeValue]) => {
   }
 });
 
-module.exports = types;
+export default types;

@@ -1,10 +1,8 @@
-'use strict';
-
-const TaskResponse = require('./task.response');
-const TextExtractionTaskResponse = require('./text.extraction.task.response');
-const IDVConstants = require('../../idv.constants');
-const Validation = require('../../../yoti_common/validation');
-const SupplementaryTextExtractionTaskResponse = require('./supplementary.document.text.extraction.task.response');
+import TaskResponse from './task.response.js';
+import TextExtractionTaskResponse from './text.extraction.task.response.js';
+import IDVConstants from '../../idv.constants.js';
+import { Validation } from '../../../yoti_common/validation.js';
+import SupplementaryTextExtractionTaskResponse from './supplementary.document.text.extraction.task.response.js';
 
 class ResourceResponse {
   constructor(resource) {
@@ -46,4 +44,4 @@ class ResourceResponse {
   }
 }
 
-module.exports = ResourceResponse;
+export default ResourceResponse;

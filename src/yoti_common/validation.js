@@ -1,6 +1,4 @@
-'use strict';
-
-module.exports = class Validation {
+export default class Validation {
   /**
    * @param {*} value
    * @param {*} type
@@ -281,4 +279,4 @@ module.exports = class Validation {
       throw Error(`${name} is not an accepted value`);
     }
   }
-};
+}

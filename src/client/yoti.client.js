@@ -1,10 +1,8 @@
-'use strict';
-
-const forge = require('node-forge');
-const { AmlService } = require('../aml_service');
-const { DynamicShareService } = require('../dynamic_sharing_service');
-const { ProfileService } = require('../profile_service');
-const config = require('../../config');
+import forge from 'node-forge';
+import { AmlService } from '../aml_service/index.js';
+import { DynamicShareService } from '../dynamic_sharing_service/index.js';
+import { ProfileService } from '../profile_service/index.js';
+import * as config from '../../config/index.js';
 
 /**
  * Decrypt the provided connect token.
@@ -106,4 +104,4 @@ class YotiClient {
   }
 }
 
-module.exports = YotiClient;
+export default YotiClient;

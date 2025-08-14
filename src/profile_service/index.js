@@ -1,10 +1,8 @@
-'use strict';
-
-const config = require('../../config');
-const Validation = require('../yoti_common/validation');
-const { RequestBuilder } = require('../request/request.builder');
-const yotiCommon = require('../yoti_common');
-const ActivityDetails = require('./activity.details').ActivityDetails;
+import * as config from '../../config/index.js';
+import { Validation } from '../yoti_common/validation.js';
+import { RequestBuilder } from '../request/request.builder.js';
+import * as yotiCommon from '../yoti_common/index.js';
+import { ActivityDetails } from './activity.details.js';
 
 const DEFAULT_API_URL = config.yoti.connectApi;
 
@@ -76,7 +74,7 @@ function getReceipt(token, pem, sdkId) {
   return profileService.getReceipt(token);
 }
 
-module.exports = {
+export {
   getReceipt,
   ProfileService,
 };

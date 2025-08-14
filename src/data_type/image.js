@@ -1,6 +1,4 @@
-'use strict';
-
-const Media = require('./media');
+import Media from './media.js';
 
 /**
  * Abstract Image class.
@@ -18,4 +16,4 @@ class Image extends Media {
   }
 }
 
-module.exports = Image;
+export default Image;

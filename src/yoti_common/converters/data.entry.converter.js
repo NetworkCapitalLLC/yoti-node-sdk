@@ -1,6 +1,4 @@
-'use strict';
-
-const ThirdPartyAttributeConverter = require('./third.party.attribute.converter');
+import ThirdPartyAttributeConverter from './third.party.attribute.converter.js';
 
 const DATA_ENTRY_THIRD_PARTY_ATTRIBUTE = 6;
 
@@ -31,4 +29,4 @@ class DataEntryConverter {
   }
 }
 
-module.exports = DataEntryConverter;
+export default DataEntryConverter;

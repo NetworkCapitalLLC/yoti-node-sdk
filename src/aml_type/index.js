@@ -1,8 +1,6 @@
-'use strict';
-
 // Export AML type modules which are required for AML check
 
-const AmlAddress = require('./aml.address').AmlAddress;
-const AmlProfile = require('./aml.profile').AmlProfile;
+import { AmlAddress } from './aml.address.js';
+import { AmlProfile } from './aml.profile.js';
 
-module.exports = { AmlAddress, AmlProfile };
+export { AmlAddress, AmlProfile };

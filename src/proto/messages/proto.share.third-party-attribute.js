@@ -1,8 +1,7 @@
-'use strict';
+import types from '../types.js';
+const { ThirdPartyAttribute } = types;
 
-const { ThirdPartyAttribute } = require('../types');
-
-module.exports = {
+export default {
 
   /**
    * @typedef {Object} Definition
@@ -20,4 +19,4 @@ module.exports = {
       /** @type {*} */(ThirdPartyAttribute.decode(Buffer.from(binaryData, 'base64'))));
     return { issuanceToken, issuingAttributes };
   },
-};
+}

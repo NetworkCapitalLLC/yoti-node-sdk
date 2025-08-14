@@ -1,8 +1,6 @@
-'use strict';
-
-const superagent = require('superagent');
-const { YotiResponse } = require('./response');
-const yotiCommon = require('../yoti_common');
+import superagent from 'superagent';
+import { YotiResponse } from './response.js';
+import * as yotiCommon from '../yoti_common/index.js';
 
 /**
  * Default HTTP request handler.
@@ -13,7 +11,7 @@ const yotiCommon = require('../yoti_common');
  *
  * @returns {Promise} Resolves {YotiResponse}
  */
-module.exports.execute = (yotiRequest, buffer = false) => new Promise((resolve, reject) => {
+export const execute = (yotiRequest, buffer = false) => new Promise((resolve, reject) => {
   const request = superagent(yotiRequest.getMethod(), yotiRequest.getUrl());
 
   const requestCanSendPayload = yotiCommon.requestCanSendPayload(yotiRequest.getMethod());

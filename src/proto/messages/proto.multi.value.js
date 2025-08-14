@@ -1,8 +1,7 @@
-'use strict';
+import types from '../types.js';
+const { MultiValue } = types;
 
-const { MultiValue } = require('../types');
-
-module.exports = {
+export default {
   /**
    * @typedef {{data: Buffer, contentType: number}} Value
    *
@@ -12,4 +11,4 @@ module.exports = {
   decodeMultiValue(value) {
     return /** {{values: Value[]}} */ (/** @type {*} */(MultiValue.decode(value)));
   },
-};
+}

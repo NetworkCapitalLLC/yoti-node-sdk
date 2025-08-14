@@ -1,5 +1,3 @@
-'use strict';
-
 class WatchlistSearchConfigResponse {
   constructor() {
     const currentClass = new.target;
@@ -9,4 +7,4 @@ class WatchlistSearchConfigResponse {
   }
 }
 
-module.exports = WatchlistSearchConfigResponse;
+export default WatchlistSearchConfigResponse;

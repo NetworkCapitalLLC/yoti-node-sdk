@@ -1,10 +1,8 @@
-'use strict';
-
 /**
  * Provides an assortment of constant fields used by IDV
  * components within the SDK.
  */
-module.exports = Object.freeze({
+export default Object.freeze({
   ID_DOCUMENT_AUTHENTICITY: 'ID_DOCUMENT_AUTHENTICITY',
   ID_DOCUMENT_TEXT_DATA_CHECK: 'ID_DOCUMENT_TEXT_DATA_CHECK',
   SUPPLEMENTARY_DOCUMENT_TEXT_DATA_CHECK: 'SUPPLEMENTARY_DOCUMENT_TEXT_DATA_CHECK',

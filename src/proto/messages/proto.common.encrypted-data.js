@@ -1,8 +1,7 @@
-'use strict';
+import types from '../types.js';
+const { EncryptedData } = types;
 
-const { EncryptedData } = require('../types');
-
-module.exports = {
+export default {
 
   /**
    * @param {Uint8Array} binaryData
@@ -20,4 +19,4 @@ module.exports = {
   encodeEncryptedData(notificationData) {
     return EncryptedData.encode(notificationData).finish();
   },
-};
+}

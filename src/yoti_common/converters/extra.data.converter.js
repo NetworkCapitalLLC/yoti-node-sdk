@@ -1,7 +1,5 @@
-'use strict';
-
-const { messages } = require('../../proto');
-const DataEntryConverter = require('./data.entry.converter');
+import { messages } from '../../proto/index.js';
+import DataEntryConverter from './data.entry.converter.js';
 
 /**
  * @typedef {import('./../../data_type/attribute.issuance.details')} AttributeIssuanceDetails
@@ -28,4 +26,4 @@ class ExtraDataConverter {
   }
 }
 
-module.exports = ExtraDataConverter;
+export default ExtraDataConverter;

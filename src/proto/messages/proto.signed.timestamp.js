@@ -1,8 +1,7 @@
-'use strict';
+import types from '../types.js';
+const { SignedTimestamp } = types;
 
-const { SignedTimestamp } = require('../types');
-
-module.exports = {
+export default {
   /**
    * @param {Uint8Array} binaryData
    * @returns {{version: number, timestamp: number}}
@@ -16,4 +15,4 @@ module.exports = {
   encodeSignedTimeStamp(notificationData) {
     return SignedTimestamp.encode(notificationData).finish();
   },
-};
+}

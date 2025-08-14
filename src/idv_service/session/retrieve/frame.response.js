@@ -1,6 +1,4 @@
-'use strict';
-
-const MediaResponse = require('./media.response');
+import MediaResponse from './media.response.js';
 
 class FrameResponse {
   constructor(frame) {
@@ -18,4 +16,4 @@ class FrameResponse {
   }
 }
 
-module.exports = FrameResponse;
+export default FrameResponse;

@@ -1,7 +1,5 @@
-'use strict';
-
-const Validation = require('../../../yoti_common/validation');
-const RawResultsResponse = require('./raw.results.response');
+import { Validation } from '../../../yoti_common/validation.js';
+import RawResultsResponse from './raw.results.response.js';
 
 class WatchlistSummaryResponse {
   constructor(summary) {
@@ -56,4 +54,4 @@ class WatchlistSummaryResponse {
   }
 }
 
-module.exports = WatchlistSummaryResponse;
+export default WatchlistSummaryResponse;

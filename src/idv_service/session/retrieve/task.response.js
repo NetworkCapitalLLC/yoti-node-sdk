@@ -1,12 +1,10 @@
-'use strict';
-
-const Validation = require('../../../yoti_common/validation');
-const GeneratedCheckResponse = require('./generated.check.response');
-const GeneratedTextDataCheckResponse = require('./generated.text.data.check.response');
-const GeneratedSupplementaryDocumentTextDataCheckResponse = require('./generated.supplementary.document.text.data.check.response');
-const GeneratedMedia = require('./generated.media');
-const IDVConstants = require('../../idv.constants');
-const { YotiDate } = require('../../../data_type/date');
+import { Validation } from '../../../yoti_common/validation.js';
+import GeneratedCheckResponse from './generated.check.response.js';
+import GeneratedTextDataCheckResponse from './generated.text.data.check.response.js';
+import GeneratedSupplementaryDocumentTextDataCheckResponse from './generated.supplementary.document.text.data.check.response.js';
+import GeneratedMedia from './generated.media.js';
+import IDVConstants from '../../idv.constants.js';
+import { YotiDate } from '../../../data_type/date.js';
 
 class TaskResponse {
   constructor(task) {
@@ -124,4 +122,4 @@ class TaskResponse {
   }
 }
 
-module.exports = TaskResponse;
+export default TaskResponse;

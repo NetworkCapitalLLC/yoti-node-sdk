@@ -1,5 +1,3 @@
-'use strict';
-
 class MultiValue {
   /**
    * MultiValue constructor.
@@ -105,4 +103,4 @@ class MultiValue {
   }
 }
 
-module.exports = MultiValue;
+export default MultiValue;

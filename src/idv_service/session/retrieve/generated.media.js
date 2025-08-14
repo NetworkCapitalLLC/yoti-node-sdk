@@ -1,6 +1,4 @@
-'use strict';
-
-const Validation = require('../../../yoti_common/validation');
+import { Validation } from '../../../yoti_common/validation.js';
 
 class GeneratedMedia {
   constructor(media) {
@@ -28,4 +26,4 @@ class GeneratedMedia {
   }
 }
 
-module.exports = GeneratedMedia;
+export default GeneratedMedia;

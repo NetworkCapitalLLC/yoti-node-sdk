@@ -1,5 +1,8 @@
-const path = require('path');
-const ProtoBuf = require('protobufjs');
+import path from 'path';
+import ProtoBuf from 'protobufjs';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Hardcoded list of proto files to avoid readDirSync for edge function compatibility
 const protoFiles = [
@@ -20,4 +23,4 @@ const definitionsFiles = protoFiles.map((file) => path.join(definitionsPath, fil
 
 const root = ProtoBuf.loadSync(definitionsFiles);
 
-module.exports = root;
+export default root;

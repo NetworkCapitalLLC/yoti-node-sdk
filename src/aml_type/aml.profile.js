@@ -1,8 +1,6 @@
-'use strict';
+import constants from '../yoti_common/constants.js';
 
-const constants = require('../yoti_common/constants');
-
-module.exports.AmlProfile = class AmlProfile {
+export class AmlProfile {
   constructor(givenNames, familyName, amlAddress, ssn) {
     this.setGivenNames(givenNames);
     this.setFamilyName(familyName);
@@ -103,4 +101,4 @@ module.exports.AmlProfile = class AmlProfile {
   toString() {
     return JSON.stringify(this.getData());
   }
-};
+}

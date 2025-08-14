@@ -1,9 +1,7 @@
-'use strict';
-
-const WatchlistAdvancedCaSearchConfigResponse = require('./watchlist.advanced.ca.search.config.response');
+import WatchlistAdvancedCaSearchConfigResponse from './watchlist.advanced.ca.search.config.response.js';
 
 class YotiAccountWatchlistCaSearchConfigResponse extends WatchlistAdvancedCaSearchConfigResponse {
 
 }
 
-module.exports = YotiAccountWatchlistCaSearchConfigResponse;
+export default YotiAccountWatchlistCaSearchConfigResponse;

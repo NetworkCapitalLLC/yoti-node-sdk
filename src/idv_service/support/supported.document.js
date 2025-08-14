@@ -1,6 +1,4 @@
-'use strict';
-
-const Validation = require('../../yoti_common/validation');
+import { Validation } from '../../yoti_common/validation.js';
 
 class SupportedDocument {
   constructor(document) {
@@ -30,4 +28,4 @@ class SupportedDocument {
   }
 }
 
-module.exports = SupportedDocument;
+export default SupportedDocument;

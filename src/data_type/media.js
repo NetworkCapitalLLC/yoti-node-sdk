@@ -1,6 +1,4 @@
-'use strict';
-
-const Validation = require('../yoti_common/validation');
+import Validation from '../yoti_common/validation.js';
 
 class Media {
   /**
@@ -48,4 +46,4 @@ class Media {
   }
 }
 
-module.exports = Media;
+export default Media;

@@ -1,7 +1,5 @@
-'use strict';
-
 /**
- * @typedef {import("./../data_type/signed.timestamp").YotiSignedTimeStamp} YotiSignedTimeStamp
+ * @typedef {import("./signed.timestamp.js").YotiSignedTimeStamp} YotiSignedTimeStamp
  */
 
 /**
@@ -86,6 +84,4 @@ class YotiAnchor {
   getOriginServerCerts() { return this.originServerCerts; }
 }
 
-module.exports = {
-  YotiAnchor,
-};
+export { YotiAnchor };

@@ -1,11 +1,9 @@
-'use strict';
+import crypto from 'crypto';
+import forge from 'node-forge';
 
-const crypto = require('crypto');
-const forge = require('node-forge');
-
-const { messages } = require('../proto');
-const { AttributeListConverter } = require('./converters/attribute.list.converter');
-const ExtraDataConverter = require('./converters/extra.data.converter');
+import { messages } from '../proto/index.js';
+import { AttributeListConverter } from './converters/attribute.list.converter.js';
+import ExtraDataConverter from './converters/extra.data.converter.js';
 
 /**
  * @typedef {import('./../data_type/attribute.issuance.details')} AttributeIssuanceDetails
@@ -88,7 +86,7 @@ function decryptProfileContent(profileContent, wrappedReceiptKey, pem) {
  * @returns {boolean}
  */
 // eslint-disable-next-line max-len
-module.exports.requestCanSendPayload = (httpMethod) => methodsThatIncludePayload.indexOf(httpMethod) !== -1;
+export const requestCanSendPayload = (httpMethod) => methodsThatIncludePayload.indexOf(httpMethod) !== -1;
 
 /**
  * @param {string} message
@@ -96,7 +94,7 @@ module.exports.requestCanSendPayload = (httpMethod) => methodsThatIncludePayload
  *
  * @returns {string}
  */
-module.exports.getRSASignatureForMessage = (message, pem) => crypto
+export const getRSASignatureForMessage = (message, pem) => crypto
   .createSign('RSA-SHA256')
   .update(message)
   .sign(pem)
@@ -107,7 +105,7 @@ module.exports.getRSASignatureForMessage = (message, pem) => crypto
  *
  * @returns {string}
  */
-module.exports.getAuthKeyFromPem = (pem) => {
+export const getAuthKeyFromPem = (pem) => {
   const privateKey = forge.pki.privateKeyFromPem(pem);
   const publicKey = forge.pki.setRsaPublicKey(privateKey.n, privateKey.e);
   const subjectPublicKeyInfo = forge.pki.publicKeyToAsn1(publicKey);
@@ -121,7 +119,7 @@ module.exports.getAuthKeyFromPem = (pem) => {
  *
  * @returns {{attributes: Object[]}}
  */
-module.exports.decryptUserProfile = (receipt, pem) => decryptProfileContent(
+export const decryptUserProfile = (receipt, pem) => decryptProfileContent(
   receipt.other_party_profile_content,
   receipt.wrapped_receipt_key,
   pem
@@ -133,7 +131,7 @@ module.exports.decryptUserProfile = (receipt, pem) => decryptProfileContent(
  *
  * @returns {{attributes: Object[]}}
  */
-module.exports.decryptApplicationProfile = (receipt, pem) => decryptProfileContent(
+export const decryptApplicationProfile = (receipt, pem) => decryptProfileContent(
   receipt.profile_content,
   receipt.wrapped_receipt_key,
   pem
@@ -145,7 +143,7 @@ module.exports.decryptApplicationProfile = (receipt, pem) => decryptProfileConte
  *
  * @returns {(AttributeIssuanceDetails | undefined)[]}
  */
-module.exports.parseExtraData = (receipt, pem) => {
+export const parseExtraData = (receipt, pem) => {
   const extraDataNotEmpty = receipt.extra_data_content
     && Object.keys(receipt.extra_data_content).length > 0;
 
@@ -169,7 +167,7 @@ module.exports.parseExtraData = (receipt, pem) => {
  *
  * @returns {Buffer}
  */
-module.exports.decryptAESGCM = (cipherText, tag, iv, secret) => {
+export const decryptAESGCM = (cipherText, tag, iv, secret) => {
   const decipher = forge.cipher.createDecipher('AES-GCM', secret.toString('binary'));
 
   const data = forge.util.createBuffer();
@@ -196,7 +194,7 @@ module.exports.decryptAESGCM = (cipherText, tag, iv, secret) => {
  *
  * @returns {Buffer}
  */
-module.exports.decryptAESCBC = (cipherText, iv, secret) => {
+export const decryptAESCBC = (cipherText, iv, secret) => {
   const data = forge.util
     .createBuffer()
     .putBytes(cipherText.toString('binary'));
@@ -219,7 +217,7 @@ module.exports.decryptAESCBC = (cipherText, iv, secret) => {
  *
  * @returns {Buffer}
  */
-module.exports.decryptAsymmetric = (cipherText, pem) => {
+export const decryptAsymmetric = (cipherText, pem) => {
   const privateKey = forge.pki.privateKeyFromPem(pem);
 
   const cipherTextBinary = Buffer
@@ -238,7 +236,7 @@ module.exports.decryptAsymmetric = (cipherText, pem) => {
  *
  * @returns {{ cipherText: Buffer, tag: Buffer }}
  */
-module.exports.decomposeAESGCMCipherText = (secret, tagSize = 16) => {
+export const decomposeAESGCMCipherText = (secret, tagSize = 16) => {
   const cipherText = secret.subarray(0, secret.length - tagSize);
   const tag = secret.subarray(secret.length - tagSize);
 

@@ -1,7 +1,5 @@
-'use strict';
-
-const WatchlistScreeningSearchConfigResponse = require('./watchlist.screening.search.config.response');
-const WatchlistSummaryResponse = require('./watchlist.summary.response');
+import WatchlistScreeningSearchConfigResponse from './watchlist.screening.search.config.response.js';
+import WatchlistSummaryResponse from './watchlist.summary.response.js';
 
 class WatchlistScreeningSummaryResponse extends WatchlistSummaryResponse {
   constructor(summary) {
@@ -21,4 +19,4 @@ class WatchlistScreeningSummaryResponse extends WatchlistSummaryResponse {
   }
 }
 
-module.exports = WatchlistScreeningSummaryResponse;
+export default WatchlistScreeningSummaryResponse;

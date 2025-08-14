@@ -1,8 +1,7 @@
-'use strict';
+import types from '../types.js';
+const { ExtraData } = types;
 
-const { ExtraData } = require('../types');
-
-module.exports = {
+export default {
   /**
    * @param {*} binaryData
    * @returns {{list: Array}}
@@ -12,4 +11,4 @@ module.exports = {
       /** @type {*} */ (ExtraData.decode(Buffer.from(binaryData, 'base64'))));
     return { list };
   },
-};
+}

@@ -1,12 +1,10 @@
-'use strict';
-
-const Image = require('./image');
+import Image from './image.js';
 
 /**
  * Image PNG attribute value.
  */
-module.exports = class ImagePng extends Image {
+export default class ImagePng extends Image {
   constructor(value) {
     super(value, 'image/png');
   }
-};
+}

@@ -3,6 +3,4 @@ const ContentType = {
   FORM_DATA: 'multipart/form-data',
 };
 
-module.exports = {
-  ContentType,
-};
+export { ContentType };

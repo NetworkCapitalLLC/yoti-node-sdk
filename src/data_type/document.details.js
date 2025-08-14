@@ -1,5 +1,3 @@
-'use strict';
-
 const VALIDATION_PATTERN = /^([A-Za-z_]*) ([A-Za-z]{3}) ([A-Za-z0-9]{1}).*$/;
 const TYPE_INDEX = 0;
 const COUNTRY_INDEX = 1;
@@ -7,7 +5,7 @@ const NUMBER_INDEX = 2;
 const EXPIRATION_INDEX = 3;
 const AUTHORITY_INDEX = 4;
 
-module.exports.DocumentDetails = class DocumentDetails {
+export class DocumentDetails {
   constructor(value) {
     this.parseFromValue(value);
   }
@@ -95,4 +93,4 @@ module.exports.DocumentDetails = class DocumentDetails {
   getIssuingAuthority() {
     return this.issuingAuthority;
   }
-};
+}

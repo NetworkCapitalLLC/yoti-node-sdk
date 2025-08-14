@@ -1,6 +1,4 @@
-'use strict';
-
-const { Attribute } = require('../data_type/attribute');
+import { Attribute } from '../data_type/attribute.js';
 
 class BaseProfile {
   /**
@@ -77,6 +75,4 @@ class BaseProfile {
   }
 }
 
-module.exports = {
-  BaseProfile,
-};
+export { BaseProfile };

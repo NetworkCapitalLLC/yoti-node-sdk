@@ -1,7 +1,5 @@
-'use strict';
-
-const FormData = require('form-data');
-const { ContentType } = require('./constants');
+import FormData from 'form-data';
+import { ContentType } from './constants.js';
 
 class Payload {
   constructor(data, type = ContentType.JSON) {
@@ -77,6 +75,4 @@ class Payload {
   }
 }
 
-module.exports = {
-  Payload,
-};
+export { Payload };

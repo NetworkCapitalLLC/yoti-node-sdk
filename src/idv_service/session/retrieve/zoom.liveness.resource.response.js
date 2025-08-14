@@ -1,9 +1,7 @@
-'use strict';
-
-const LivenessResourceResponse = require('./liveness.resource.response');
-const FrameResponse = require('./frame.response');
-const FaceMapResponse = require('./face.map.response');
-const Validation = require('../../../yoti_common/validation');
+import LivenessResourceResponse from './liveness.resource.response.js';
+import FrameResponse from './frame.response.js';
+import FaceMapResponse from './face.map.response.js';
+import { Validation } from '../../../yoti_common/validation.js';
 
 class ZoomLivenessResourceResponse extends LivenessResourceResponse {
   constructor(resource) {
@@ -39,4 +37,4 @@ class ZoomLivenessResourceResponse extends LivenessResourceResponse {
   }
 }
 
-module.exports = ZoomLivenessResourceResponse;
+export default ZoomLivenessResourceResponse;

@@ -1,6 +1,4 @@
-'use strict';
-
-const SupportedCountry = require('./supported.country');
+import SupportedCountry from './supported.country.js';
 
 class SupportedDocumentsResponse {
   constructor(response) {
@@ -19,4 +17,4 @@ class SupportedDocumentsResponse {
   }
 }
 
-module.exports = SupportedDocumentsResponse;
+export default SupportedDocumentsResponse;

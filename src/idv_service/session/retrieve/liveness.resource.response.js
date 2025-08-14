@@ -1,7 +1,5 @@
-'use strict';
-
-const ResourceResponse = require('./resource.response');
-const Validation = require('../../../yoti_common/validation');
+import ResourceResponse from './resource.response.js';
+import { Validation } from '../../../yoti_common/validation.js';
 
 class LivenessResourceResponse extends ResourceResponse {
   constructor(resource) {
@@ -20,4 +18,4 @@ class LivenessResourceResponse extends ResourceResponse {
   }
 }
 
-module.exports = LivenessResourceResponse;
+export default LivenessResourceResponse;

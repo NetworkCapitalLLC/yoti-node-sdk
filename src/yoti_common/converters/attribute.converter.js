@@ -1,13 +1,11 @@
-'use strict';
-
-const constants = require('../constants');
-const { messages } = require('../../proto');
-const { AgeVerification } = require('../../data_type/age.verification');
-const { DocumentDetails } = require('../../data_type/document.details');
-const Image = require('../../data_type/image');
-const ImageJpeg = require('../../data_type/image.jpeg');
-const ImagePng = require('../../data_type/image.png');
-const MultiValue = require('../../data_type/multi.value');
+import constants from '../constants.js';
+import { messages } from '../../proto/index.js';
+import { AgeVerification } from '../../data_type/age.verification.js';
+import { DocumentDetails } from '../../data_type/document.details.js';
+import Image from '../../data_type/image.js';
+import ImageJpeg from '../../data_type/image.jpeg.js';
+import ImagePng from '../../data_type/image.png.js';
+import MultiValue from '../../data_type/multi.value.js';
 
 const CONTENT_TYPE_STRING = 1;
 const CONTENT_TYPE_JPEG = 2;
@@ -17,7 +15,7 @@ const CONTENT_TYPE_JSON = 5;
 const CONTENT_TYPE_MULTI_VALUE = 6;
 const CONTENT_TYPE_INT = 7;
 
-module.exports.AttributeConverter = class AttributeConverter {
+export class AttributeConverter {
   static convertValueBasedOnAttributeName(value, name) {
     if (!value) {
       return null;
@@ -84,4 +82,4 @@ module.exports.AttributeConverter = class AttributeConverter {
     });
     return new MultiValue(items);
   }
-};
+}

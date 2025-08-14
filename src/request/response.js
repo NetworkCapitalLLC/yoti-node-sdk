@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @class YotiResponse
  */
@@ -60,6 +58,4 @@ class YotiResponse {
   }
 }
 
-module.exports = {
-  YotiResponse,
-};
+export { YotiResponse };

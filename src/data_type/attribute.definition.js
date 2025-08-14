@@ -1,6 +1,4 @@
-'use strict';
-
-const Validation = require('../yoti_common/validation');
+import Validation from '../yoti_common/validation.js';
 
 class AttributeDefinition {
   constructor(name) {
@@ -21,4 +19,4 @@ class AttributeDefinition {
   }
 }
 
-module.exports = AttributeDefinition;
+export default AttributeDefinition;

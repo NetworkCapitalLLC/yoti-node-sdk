@@ -1,8 +1,6 @@
-'use strict';
-
-const Validation = require('../yoti_common/validation');
-const { Payload } = require('./payload');
-const requestHandler = require('./request.handler');
+import { Validation } from '../yoti_common/validation.js';
+import { Payload } from './payload.js';
+import * as requestHandler from './request.handler.js';
 
 const SUPPORTED_METHODS = ['POST', 'PUT', 'PATCH', 'GET', 'DELETE'];
 
@@ -75,6 +73,4 @@ class YotiRequest {
   }
 }
 
-module.exports = {
-  YotiRequest,
-};
+export { YotiRequest };

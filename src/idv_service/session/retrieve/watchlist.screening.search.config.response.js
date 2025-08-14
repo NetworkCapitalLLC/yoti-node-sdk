@@ -1,7 +1,5 @@
-'use strict';
-
-const Validation = require('../../../yoti_common/validation');
-const WatchlistSearchConfigResponse = require('./watchlist.search.config.response');
+import { Validation } from '../../../yoti_common/validation.js';
+import WatchlistSearchConfigResponse from './watchlist.search.config.response.js';
 
 class WatchlistScreeningSearchConfigResponse extends WatchlistSearchConfigResponse {
   constructor(searchConfig) {
@@ -25,4 +23,4 @@ class WatchlistScreeningSearchConfigResponse extends WatchlistSearchConfigRespon
   }
 }
 
-module.exports = WatchlistScreeningSearchConfigResponse;
+export default WatchlistScreeningSearchConfigResponse;

@@ -1,6 +1,4 @@
-'use strict';
-
-const Validation = require('../../../yoti_common/validation');
+import { Validation } from '../../../yoti_common/validation.js';
 
 class GeneratedCheckResponse {
   constructor(check) {
@@ -28,4 +26,4 @@ class GeneratedCheckResponse {
   }
 }
 
-module.exports = GeneratedCheckResponse;
+export default GeneratedCheckResponse;

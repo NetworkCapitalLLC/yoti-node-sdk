@@ -1,7 +1,5 @@
-'use strict';
-
-const Validation = require('../yoti_common/validation');
-const AttributeDefinition = require('./attribute.definition');
+import Validation from '../yoti_common/validation.js';
+import AttributeDefinition from './attribute.definition.js';
 
 class AttributeIssuanceDetails {
   /**
@@ -38,4 +36,4 @@ class AttributeIssuanceDetails {
   }
 }
 
-module.exports = AttributeIssuanceDetails;
+export default AttributeIssuanceDetails;

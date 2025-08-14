@@ -1,13 +1,12 @@
-'use strict';
-
-const fs = require('fs');
-const { v4: uuid } = require('uuid');
-
-const yotiCommon = require('../yoti_common');
-const { YotiRequest } = require('./request');
-const Validation = require('../yoti_common/validation');
+import fs from 'fs';
+import { v4 as uuid } from 'uuid';
+import * as yotiCommon from '../yoti_common/index.js';
+import { YotiRequest } from './request.js';
+import { Validation } from '../yoti_common/validation.js';
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
 const yotiPackage = require('../../package.json');
-const { ContentType } = require('./constants');
+import { ContentType } from './constants.js';
 
 const SDK_IDENTIFIER = 'Node';
 
@@ -215,6 +214,4 @@ class RequestBuilder {
   }
 }
 
-module.exports = {
-  RequestBuilder,
-};
+export { RequestBuilder };

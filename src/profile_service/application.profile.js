@@ -1,7 +1,5 @@
-'use strict';
-
-const constants = require('../yoti_common/constants');
-const { BaseProfile } = require('./base.profile');
+import constants from '../yoti_common/constants.js';
+import { BaseProfile } from './base.profile.js';
 
 /**
  * @typedef {import('../data_type/attribute').Attribute} Attribute
@@ -52,6 +50,4 @@ class ApplicationProfile extends BaseProfile {
   }
 }
 
-module.exports = {
-  ApplicationProfile,
-};
+export { ApplicationProfile };

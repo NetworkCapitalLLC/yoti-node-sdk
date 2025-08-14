@@ -1,11 +1,9 @@
-'use strict';
-
-const AmlResultClass = require('../request/aml.result').AmlResult;
-const Payload = require('../request/payload').Payload;
-const constants = require('../yoti_common/constants');
-const config = require('../../config');
-const Validation = require('../yoti_common/validation');
-const { RequestBuilder } = require('../request/request.builder');
+import { AmlResult as AmlResultClass } from '../request/aml.result.js';
+import { Payload } from '../request/payload.js';
+import constants from '../yoti_common/constants.js';
+import * as config from '../../config/index.js';
+import { Validation } from '../yoti_common/validation.js';
+import { RequestBuilder } from '../request/request.builder.js';
 
 const DEFAULT_API_URL = config.yoti.connectApi;
 
@@ -101,7 +99,7 @@ function performAmlCheck(amlProfile, pem, sdkId) {
   return amlService.performAmlCheck(amlProfile);
 }
 
-module.exports = {
+export {
   performAmlCheck,
   AmlService,
 };

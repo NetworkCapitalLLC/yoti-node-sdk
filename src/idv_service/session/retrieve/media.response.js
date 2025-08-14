@@ -1,7 +1,5 @@
-'use strict';
-
-const Validation = require('../../../yoti_common/validation');
-const { YotiDate } = require('../../../data_type/date');
+import { Validation } from '../../../yoti_common/validation.js';
+import { YotiDate } from '../../../data_type/date.js';
 
 class MediaResponse {
   constructor(media) {
@@ -55,4 +53,4 @@ class MediaResponse {
   }
 }
 
-module.exports = MediaResponse;
+export default MediaResponse;

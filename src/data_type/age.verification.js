@@ -1,7 +1,5 @@
-'use strict';
-
-const Validation = require('../yoti_common/validation');
-const constants = require('../yoti_common/constants');
+import Validation from '../yoti_common/validation.js';
+import constants from '../yoti_common/constants.js';
 
 /**
  * Based on an 'Age Verify/Condition' attribute name and value, provides behaviour specific
@@ -71,6 +69,4 @@ class AgeVerification {
   }
 }
 
-module.exports = {
-  AgeVerification,
-};
+export { AgeVerification };

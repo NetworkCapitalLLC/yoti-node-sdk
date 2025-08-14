@@ -1,7 +1,5 @@
-'use strict';
-
-const config = require('../../config');
-const { DigitalIdentityService } = require('../digital_identity_service');
+import * as config from '../../config/index.js';
+import { DigitalIdentityService } from '../digital_identity_service/index.js';
 
 class DigitalIdentityClient {
   /**
@@ -76,4 +74,4 @@ class DigitalIdentityClient {
   }
 }
 
-module.exports = DigitalIdentityClient;
+export default DigitalIdentityClient;

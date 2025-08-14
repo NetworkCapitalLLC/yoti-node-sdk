@@ -1,6 +1,4 @@
-'use strict';
-
-const { YotiDate } = require('./date');
+import { YotiDate } from './date.js';
 
 /**
  * SignedTimestamp is a timestamp associated with a message that has a
@@ -39,6 +37,4 @@ class YotiSignedTimeStamp {
   getTimestamp() { return this.timestamp; }
 }
 
-module.exports = {
-  YotiSignedTimeStamp,
-};
+export { YotiSignedTimeStamp };

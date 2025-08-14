@@ -1,6 +1,4 @@
-'use strict';
-
-const Validation = require('../yoti_common/validation');
+import Validation from '../yoti_common/validation.js';
 
 /**
  * Formats date part padded with leading zeros.
@@ -161,6 +159,4 @@ class YotiDate extends Date {
   }
 }
 
-module.exports = {
-  YotiDate,
-};
+export { YotiDate };

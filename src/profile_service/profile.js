@@ -1,10 +1,8 @@
-'use strict';
-
-const constants = require('../yoti_common/constants');
-const { BaseProfile } = require('./base.profile');
-const { AgeVerification } = require('../data_type/age.verification');
-const { Attribute } = require('../data_type/attribute');
-const Validation = require('../yoti_common/validation');
+import constants from '../yoti_common/constants.js';
+import { BaseProfile } from './base.profile.js';
+import { AgeVerification } from '../data_type/age.verification.js';
+import { Attribute } from '../data_type/attribute.js';
+import { Validation } from '../yoti_common/validation.js';
 
 /**
  * Profile of a human user with convenience methods to access well-known attributes.
@@ -214,6 +212,4 @@ class Profile extends BaseProfile {
   }
 }
 
-module.exports = {
-  Profile,
-};
+export { Profile };

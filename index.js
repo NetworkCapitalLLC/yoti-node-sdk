@@ -1,13 +1,11 @@
-'use strict';
+import { YotiClient, IDVClient, DigitalIdentityClient } from './src/client/index.js';
+import { AmlAddress, AmlProfile } from './src/aml_type/index.js';
+import { RequestBuilder } from './src/request/request.builder.js';
+import { Payload } from './src/request/payload.js';
+import { YotiDate } from './src/data_type/date.js';
+import constants from './src/yoti_common/constants.js';
 
-const { YotiClient, IDVClient, DigitalIdentityClient } = require('./src/client');
-const { AmlAddress, AmlProfile } = require('./src/aml_type');
-const { RequestBuilder } = require('./src/request/request.builder');
-const { Payload } = require('./src/request/payload');
-const { YotiDate } = require('./src/data_type/date');
-const constants = require('./src/yoti_common/constants');
-
-const {
+import {
   DynamicScenarioBuilder,
   DynamicPolicyBuilder,
   WantedAttributeBuilder,
@@ -18,13 +16,13 @@ const {
   WantedAnchorBuilder,
   ConstraintsBuilder,
   SourceConstraintBuilder,
-} = require('./src/dynamic_sharing_service');
+} from './src/dynamic_sharing_service/index.js';
 
-const {
+import {
   DigitalIdentityBuilders,
-} = require('./src/digital_identity_service');
+} from './src/digital_identity_service/index.js';
 
-const {
+import {
   SessionSpecificationBuilder,
   NotificationConfigBuilder,
   SdkConfigBuilder,
@@ -58,21 +56,21 @@ const {
   AdvancedIdentityProfileBuilder,
   AdvancedIdentityProfileSchemeBuilder,
   AdvancedIdentityProfileRequirementsBuilder,
+} from './src/idv_service/index.js';
 
-} = require('./src/idv_service');
+import YotiCommon from './src/yoti_common/index.js';
+import { YotiRequest } from './src/request/request.js';
+import IDVError from './src/idv_service/idv.error.js';
 
-const YotiCommon = require('./src/yoti_common');
-const { YotiRequest } = require('./src/request/request');
-const IDVError = require('./src/idv_service/idv.error');
+export const internals = {
+  IDVService,
+  YotiCommon,
+  YotiRequest,
+  IDVError,
+};
 
-module.exports = {
-  internals: {
-    IDVService,
-    YotiCommon,
-    YotiRequest,
-    IDVError,
-  },
-  Client: YotiClient,
+export const Client = YotiClient;
+export {
   IDVClient,
   DigitalIdentityClient,
   IDVConstants,

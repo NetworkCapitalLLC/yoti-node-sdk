@@ -1,7 +1,4 @@
-const types = require('./types');
-const messages = require('./messages');
+import types from './types.js';
+import messages from './messages/index.js';
 
-module.exports = {
-  types,
-  messages,
-};
+export { types, messages };

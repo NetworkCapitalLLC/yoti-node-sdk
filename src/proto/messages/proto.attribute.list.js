@@ -1,12 +1,11 @@
-'use strict';
-
-const { AttributeList } = require('../types');
+import types from '../types.js';
+const { AttributeList } = types;
 
 /**
- * @typedef {import('../types').Attribute} Attribute
+ * @typedef {import('../types.js').Attribute} Attribute
  */
 
-module.exports = {
+export default {
 
   /**
    * Decode all attributes.
@@ -24,4 +23,4 @@ module.exports = {
   encodeAttributeList(attributesData) {
     return AttributeList.encode({ attributes: attributesData }).finish();
   },
-};
+}

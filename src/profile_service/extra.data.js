@@ -1,6 +1,4 @@
-'use strict';
-
-const AttributeIssuanceDetails = require('../data_type/attribute.issuance.details');
+import AttributeIssuanceDetails from '../data_type/attribute.issuance.details.js';
 
 /**
  * @param {Object[]} dataEntries
@@ -31,4 +29,4 @@ class ExtraData {
   }
 }
 
-module.exports = ExtraData;
+export default ExtraData;
